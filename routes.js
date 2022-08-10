@@ -1,9 +1,8 @@
 const express = require('express');
-const CustomerController = require('./controllers/CustomerController');
 const router = express.Router();
 
 // Import controllers
-const CostumerController = require('./controllers/CustomerController');
+const CustomerController = require('./controllers/CustomerController');
 const OrderController = require('./controllers/OrderController');
 
 //Home
