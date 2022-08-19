@@ -30,7 +30,7 @@ app.get('*', (req, res)=> {
 
         //connection to BD
         
-        sequelize.sync({ force: false }).then(() => {
+        sequelize.authenticate().then(() => {
             console.log('DB is connected');
         }).catch(error => {
             console.log('An error has occurred')

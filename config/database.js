@@ -11,5 +11,9 @@ module.exports = {
 
   // Configure Seeds
   seederStorage: "sequelize",
-  seederStorageTableName: "ecommercedbSeeds",
+  seederStorageTableName: "seeds",
+
+    // Configure Migrations
+    migrationStorage: "sequelize",
+    migrationStorageTableName: "migrations",
 };

@@ -5,42 +5,49 @@ const { faker } = require('@faker-js/faker');
 
 
 module.exports = {
-  up: (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('Orders', [
+  up: async(queryInterface, Sequelize) => {
+    await queryInterface.bulkInsert('Orders', [
     {
       amount: faker.finance.amount(),
       createdAt: new Date(),
-      updatedAt: new Date()
+      updatedAt: new Date(),
+      customerId: 4
     },
     {
       amount: faker.finance.amount(),
       createdAt: new Date(),
-      updatedAt: new Date()
+      updatedAt: new Date(),
+      customerId: 1
     },
     {
       amount: faker.finance.amount(),
       createdAt: new Date(),
-      updatedAt: new Date()
+      updatedAt: new Date(),
+      customerId: 3
     },
     {
       amount: faker.finance.amount(),
       createdAt: new Date(),
-      updatedAt: new Date()
+      updatedAt: new Date(),
+      customerId: 3
     },
     {
       amount: faker.finance.amount(),
       createdAt: new Date(),
-      updatedAt: new Date()
+      updatedAt: new Date(),
+      customerId: 1
     },
     {
       amount: faker.finance.amount(),
       createdAt: new Date(),
-      updatedAt: new Date()
+      updatedAt: new Date(),
+      customerId: 5
     },
 
-  ]);
+  ], {});
   },
-  down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete('Orders', null, {});
+  
+  down: async(queryInterface, Sequelize) => {
+    await queryInterface.bulkDelete('Orders', null, {});
   }
 };
