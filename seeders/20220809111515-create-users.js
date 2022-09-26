@@ -4,7 +4,7 @@ module.exports = {
   // is executed when we do the seeding
   async up (queryInterface, Sequelize) {
     
-     await queryInterface.bulkInsert('customers', [{
+     await queryInterface.bulkInsert('users', [{
       name: "Leandro",
       surname: "Salvado",
       email: "leandro@mail.com",
@@ -13,6 +13,7 @@ module.exports = {
       city: "Málaga",
       zipCode: "29010",
       country: "Spain",
+      rol: "admin",
       createdAt: new Date(),
       updatedAt: new Date()
      },
@@ -25,6 +26,7 @@ module.exports = {
       city: "Barcelona",
       zipCode: "08010",
       country: "Spain",
+      rol: "customer",
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -37,6 +39,7 @@ module.exports = {
       city: "Caceres",
       zipCode: "48010",
       country: "Spain",
+      rol: "customer",
       createdAt: new Date(),
       updatedAt: new Date()
     }], {});
@@ -46,9 +49,10 @@ module.exports = {
   // is executed when we undo the seed
   async down (queryInterface, Sequelize) {
     
-     await queryInterface.bulkDelete('customers', {
+     await queryInterface.bulkDelete('users', {
       country: 'USA'
      }, {});
      
   }
 };
+

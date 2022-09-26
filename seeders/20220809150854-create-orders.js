@@ -11,7 +11,7 @@ module.exports = {
       amount: faker.finance.amount(),
       createdAt: new Date(),
       updatedAt: new Date(),
-      customerId: 4
+      customerId: 2
     },
     {
       amount: faker.finance.amount(),
@@ -41,12 +41,12 @@ module.exports = {
       amount: faker.finance.amount(),
       createdAt: new Date(),
       updatedAt: new Date(),
-      customerId: 5
+      customerId: 1
     },
 
   ], {});
   },
-  
+
   down: async(queryInterface, Sequelize) => {
     await queryInterface.bulkDelete('Orders', null, {});
   }

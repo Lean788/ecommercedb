@@ -1,15 +1,15 @@
-const { Customer } = require('../models/index');
+const { User } = require('../models/index');
 
 module.exports = {
 
     async all(req, res) {
-        let customers = await Customer.findAll({
+        let users = await User.findAll({
             include: {
                 attributes: ['name', 'surname']
             }
         });
 
-        res.json(customers);
+        res.json(users);
     }
 
 }
